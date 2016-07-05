@@ -13,7 +13,7 @@ public class ExampleUnitTest {
         assertEquals(4, 2 + 2);
     }
     @Test
-    public void additionFromClassIsCorrect(){
+    public void calculator_addition_isCorrect(){
         assertEquals(4, Calculator.sum(2,2));
     }
 }
