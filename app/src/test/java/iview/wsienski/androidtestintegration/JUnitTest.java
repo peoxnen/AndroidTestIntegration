@@ -1,14 +1,13 @@
 package iview.wsienski.androidtestintegration;
 
+import org.hamcrest.core.CombinableMatcher;
 import org.junit.Test;
 
 import java.util.Arrays;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.core.StringStartsWith.startsWith;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * Created by Witold Sienski on 05.07.2016.
@@ -50,6 +49,60 @@ public class JUnitTest {
     @Test
     public void testHarmestCoreMatchersEveryItem(){
         assertThat(Arrays.asList(new String[] { "alpha", "adam", "angel" }), everyItem(startsWith("a")));
+
+    }
+
+    @Test
+    public void testCombineMatcher(){
+        assertThat(5, CombinableMatcher.either(equalTo(4)).or(equalTo(5)));
+    }
+
+    @Test
+    public void testCombineMatcherEither(){
+        assertThat(5, not(CombinableMatcher.either(equalTo(4)).or(equalTo(6))));
+    }
+
+    @Test
+    public void testHasItems(){
+        assertThat(Arrays.asList("small", "smaller","big"), hasItems("big", "small"));
+    }
+
+    @Test
+    public void testBothStartWith(){
+        assertThat("test",both(startsWith("te")).and(endsWith("st")));
+    }
+
+    @Test
+    public void testSame() {
+        Integer num1 = Integer.valueOf(1);
+        Integer num2 = num1;
+        assertSame("not same", num1, num2);
+    }
+
+    @Test
+    public void testNotSame(){
+        Integer num1 = Integer.valueOf(1);
+        Integer num2 = Integer.valueOf(2);
+        assertNotSame("same", num1, num2);
+    }
+
+    @Test
+    public void testArrayEquals(){
+        char[] tab1= "trial".toCharArray();
+        char[] tab2= "trial".toCharArray();
+        assertArrayEquals("arrays not same", tab1, tab2);
+    }
+
+    @Test
+    public void testNotNull(){
+        String s = "";
+        assertNotNull(s);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void testExceptNullPointerExc(){
+        String s = null;
+        s.length();
     }
 
 }
