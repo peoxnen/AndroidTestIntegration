@@ -13,6 +13,10 @@ public class Calculator {
         this.context = context;
     }
 
+    public String getDefaultValue(){
+        return  context.getString(R.string.app_name);
+    }
+
     public static int sum(int num1, int num2){
         return num1 + num2;
     }
