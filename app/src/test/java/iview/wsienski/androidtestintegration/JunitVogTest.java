@@ -14,7 +14,7 @@ public class JUnitVogTest {
     long time;
 
     @BeforeClass
-    public void prepareOncBeforeTests(){
+    public static void prepareOnBeforeTests(){
 
     }
 
@@ -34,7 +34,7 @@ public class JUnitVogTest {
     }
 
     @AfterClass
-    public void afterOnceAfterTests(){
+    public static void afterOnceAfterTests(){
 
     }
 
