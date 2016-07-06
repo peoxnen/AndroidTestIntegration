@@ -1,15 +1,20 @@
 package iview.wsienski.androidtestintegration;
 
+import org.junit.experimental.categories.Categories;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
+
+import iview.wsienski.androidtestintegration.testcategories.SlowTests;
 
 /**
  * Created by Witold Sienski on 05.07.2016.
  */
-@RunWith(Suite.class)
+@RunWith(Categories.class)
+@Categories.ExcludeCategory(SlowTests.class)
 @Suite.SuiteClasses({
         ExampleUnitTest.class,
-        JUnitTest.class
+        JUnitTest.class,
+        JUnitRuleTest.class
 })
 public class JUnitSuiteTest {
 }

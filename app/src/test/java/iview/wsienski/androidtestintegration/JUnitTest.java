@@ -1,6 +1,7 @@
 package iview.wsienski.androidtestintegration;
 
 import org.hamcrest.core.CombinableMatcher;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -93,9 +94,10 @@ public class JUnitTest {
         assertArrayEquals("arrays not same", tab1, tab2);
     }
 
+    @Ignore
     @Test
     public void testNotNull(){
-        String s = "";
+        String s = null;
         assertNotNull(s);
     }
 
