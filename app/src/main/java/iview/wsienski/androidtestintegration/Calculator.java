@@ -13,6 +13,10 @@ public class Calculator {
         this.context = context;
     }
 
+    public void exampleMethod(){
+
+    }
+
     public String getDefaultValue(){
         return  context.getString(R.string.app_name);
     }
