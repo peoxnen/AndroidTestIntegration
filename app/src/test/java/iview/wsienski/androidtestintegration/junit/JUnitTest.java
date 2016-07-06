@@ -1,4 +1,4 @@
-package iview.wsienski.androidtestintegration;
+package iview.wsienski.androidtestintegration.junit;
 
 import org.hamcrest.core.CombinableMatcher;
 import org.junit.Ignore;

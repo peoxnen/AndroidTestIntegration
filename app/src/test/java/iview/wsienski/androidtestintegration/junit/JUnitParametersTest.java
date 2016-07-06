@@ -1,4 +1,4 @@
-package iview.wsienski.androidtestintegration;
+package iview.wsienski.androidtestintegration.junit;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,8 +1,10 @@
-package iview.wsienski.androidtestintegration;
+package iview.wsienski.androidtestintegration.junit;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
+import iview.wsienski.androidtestintegration.Calculator;
 import iview.wsienski.androidtestintegration.testcategories.FastTest;
 import iview.wsienski.androidtestintegration.testcategories.SlowTests;
 
@@ -20,6 +22,6 @@ public class ExampleUnitTest {
     @Test @Category(FastTest.class)
     public void calculator_addition_isCorrect(){
         System.out.print("calculator_addition_isCorrect");
-        assertEquals(4, Calculator.sum(2,2));
+        Assert.assertEquals(4, Calculator.sum(2,2));
     }
 }
