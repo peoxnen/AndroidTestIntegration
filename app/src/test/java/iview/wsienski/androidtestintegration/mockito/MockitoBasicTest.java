@@ -32,7 +32,7 @@ public class MockitoBasicTest {
     }
 
     @Test
-    public void testNeverAddToList(){
+    public void tAestNeverAddToList(){
         verify(mockList, never()).add("test1");
     }
 

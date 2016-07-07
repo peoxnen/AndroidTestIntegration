@@ -28,7 +28,7 @@ public class MockitoCaptorTest {
 
 
     @Test
-    public final void shouldContainCertainListItem() {
+    public void testListContainItem() {
         List<String> asList = Arrays.asList("someElement_test", "someElement");
         final List<String> mockedList = mock(List.class);
         mockedList.addAll(asList);
