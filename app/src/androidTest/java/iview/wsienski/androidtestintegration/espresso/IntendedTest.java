@@ -1,7 +1,6 @@
 package iview.wsienski.androidtestintegration.espresso;
 
-import android.support.test.filters.Suppress;
-import android.support.test.rule.ActivityTestRule;
+import android.support.test.espresso.intent.rule.IntentsTestRule;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -22,13 +21,12 @@ public class IntendedTest {
     //TODO do poprawienia
     @Rule
     // third parameter is set to false which means the activity is not started automatically
-    public ActivityTestRule<MainActivity> rule =
-            new ActivityTestRule(MainActivity.class, true, false);
+    public IntentsTestRule<MainActivity> rule =
+            new IntentsTestRule(MainActivity.class);
 
-    @Suppress
     @Test
     public void triggerIntentTest() {
         onView(withId(R.id.button_startSecondActivity)).perform(click());
-        intended(toPackage("iview.wsienski.androidtestintegration.secondactivity"));
+        intended(toPackage("iview.wsienski.androidtestintegration"));
     }
 }
