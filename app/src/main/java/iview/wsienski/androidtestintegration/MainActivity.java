@@ -10,15 +10,20 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button button,button_startSecondActivity, button_login;
+    EditText editText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EditText editText = (EditText) findViewById(R.id.edit_query);
-        Button button = (Button) findViewById(R.id.button);
-        Button button_startSecondActivity = (Button) findViewById(R.id.button_startSecondActivity);
+        editText = (EditText) findViewById(R.id.edit_query);
+        button = (Button) findViewById(R.id.button);
+        button_startSecondActivity = (Button) findViewById(R.id.button_startSecondActivity);
+        button_login = (Button) findViewById(R.id.button_login);
         setBtn(button);
         setBtnStartSecondActivity(button_startSecondActivity);
+        setBtnLogin(button_login);
 
         Bundle inputData = getIntent().getExtras();
         if(inputData!=null) {
@@ -27,14 +32,39 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void setBtnLogin(Button button_login) {
+        button_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(validadeText()){
+                    startNewActivity();
+                }
+            }
+        });
+    }
+
+    private boolean validadeText() {
+        String text = editText.getText().toString();
+        if(text== null || text.length()<3){
+            editText.setError("Error");
+            return false;
+        }else{
+            return true;
+        }
+    }
+
     private void setBtnStartSecondActivity(Button button) {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                startActivity(intent);
+                startNewActivity();
             }
         });
+    }
+
+    private void startNewActivity(){
+        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+        startActivity(intent);
     }
 
     private void setBtn(Button button) {
