@@ -15,8 +15,8 @@ import iview.wsienski.androidtestintegration.SecondActivity;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.core.deps.guava.base.Preconditions.checkArgument;
 import static android.support.test.espresso.core.deps.guava.base.Preconditions.checkNotNull;
-import static android.support.test.espresso.intent.Checks.checkArgument;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static org.hamcrest.CoreMatchers.is;
 
