@@ -21,6 +21,10 @@ android {
     }
 }
 
+configurations {
+    androidTestCompile.exclude group: 'com.android.support', module: 'support-v4'
+}
+
 configurations.all {
     resolutionStrategy {
         force 'com.android.support:support-annotations:23.1.1'
@@ -51,8 +55,6 @@ dependencies {
     androidTestCompile 'com.android.support.test.espresso:espresso-intents:2.2.2'
     // Espresso-contrib for DatePicker, RecyclerView, Drawer actions, Accessibility checks, CountingIdlingResource
     androidTestCompile 'com.android.support.test.espresso:espresso-contrib:2.2.2'
-    // Espresso-web for WebView support
-    androidTestCompile 'com.android.support.test.espresso:espresso-web:2.2.2'
     // Espresso-idling-resource for synchronization with background jobs
     androidTestCompile 'com.android.support.test.espresso:espresso-idling-resource:2.2.2'
     // Robolectric
