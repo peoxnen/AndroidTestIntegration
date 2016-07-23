@@ -6,3 +6,7 @@ This project was created for educational purposes only! Android app which shows 
 <li>Espresso</li>
 <li>Robolectric</li>
 </ul>
+<h1>Status:</h1>
+Almost complete
+<h1>Category:</h1>
+Education/Tests
